@@ -1,0 +1,46 @@
+<!--   api key -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+	<link rel="stylesheet" href="index.css">
+	<script src="index.js"></script>
+
+	<title>Carkillulator</title>
+</head>
+
+<body>
+	<div class="row">
+		<div class="columnA">
+			<div class="leftcontainer">
+				<h1>Probability of Crash</h1>
+				<h3 id="crash-probability"></h3>
+				<div class="form-group">
+					<label class="form-label" for="input-example-1">Enter a starting location: </label>
+					<input class="form-input" type="text" id="pac-input1" placeholder="Departure Point">
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="input-example-1">Enter a destination: </label>
+					<input class="form-input" type="text" id="pac-input2" placeholder="Destination">
+				</div>
+				<strong>Roads along Route</strong>
+				<ol id="routeslist">
+				</ol>
+				<button class="btn btn-primary input-group-btn" onclick="onCalcPressed()">Calculate Crash Probability</button>
+				<!-- <br>
+				<span><a class="text-primary" href="#">about</a> • <a class="text-primary" href="#">github</a></span> -->
+			</div>
+		</div>
+		<div class="columnB">
+			<div id="map"></div>
+		</div>
+	</div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsCIQNvqm8Khm4lRSR5tIK47sMEtKAD1g&libraries=places&callback=initMaps"
+	 async defer></script>
+</body>
+
+</html>
