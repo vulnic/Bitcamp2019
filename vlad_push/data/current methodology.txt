@@ -1,0 +1,96 @@
+-crash data:
+	-location
+	-time of day
+	-date
+	-road
+	-weather codes
+
+from this we form:
+	-what was speed limit on road of crash
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+training data:
+
+-speed limit
+-weather codes
+-time of day (hour)
+-date (0 to 365)
+
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+user input:
+
+-path
+-path into segments by turns
+	-update speed limit at new speed limit
+	-if paths have no speed limit, add no data (essentially 0%)
+	-if multiple, average speed limit by distance along road:
+
+	 (distance*speed limit) + (distance*speed limit) + etc	
+	-----------------------------------------------------
+		 	total distance	
+
+OORRR
+	d = distance 
+		@ speed limit A 
+
+	p = percent chance of crash 
+		@speed limit  A
+		@weather code W
+		@hour of day  H
+		@date of year D
+
+	 (d*p) + (d*p) + etc	
+	---------------------- = trip crash percentage
+	  total trip distance	
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+Above equation is sound because the center of mass formula is 
+very similar, which averages distance BASED on mass as well.
+This formula is averaging percentage BASED on distance traveled!
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+shortcomings:
+
+-roads without speed limits
+-age of driver (or anything about driver)
+	^if driver was under influence or tired is also not accounted for
+-type of road (rush hour, traffic) 
+	^^could be solved if model finds that roads with higher 
+	  speed limits have crashes at certain times (rush hour)
+
+	-(Solved?) length of trip on road
+	-(SOLVED)  potentially forms of weather
+	-(SOLVED)  part of year (seasons -> weather) (night/day diff lengths)
+-actual real-time congestion consideration
+-# of lanes of traffic
+-AoI (Areas of Interest) => hospitals,schools,bus stations, airports, etc
+-
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+could become a financial hack if we apply this to all roads in a 
+given county/city/state
+
+Will likely give us, a higher percent chance of a crash in a given
+area, then the rate of a car loan or car insurance can be adjusted
+(percentiles)
+This area with this driver is in the 95th percentile of drivers
+
+0 - 2.15% - 13.5% - 34% - 50% - repeat but going down
+  |-- 99.7%--|--95%--|-------68%-------|----
+     -.15%    -.05%         +-0%            +.05%
+
+
+calculate loan amounts by area and then use our calculator?
+
+MAYBE ASK MENTOR HOW TO TURN THIS INTO A FINANCIAL THING
+ 
+
+

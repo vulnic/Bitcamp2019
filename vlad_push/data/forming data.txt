@@ -1,0 +1,18 @@
+X Y 2015 2016 MPH       
+     1
+     24 points of data
+
+
+hour| MPH
+
+    | 20-25 round to 30
+24  | 30
+24  | 35
+24  | 40
+24  | 45
+24  | 50
+24  | 55 - 70 (highway)
+
+7 pdfs, 2 years = 14
+
+end result => # cars driving @ hour @ MPH on average/day in MD
